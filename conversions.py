@@ -20,12 +20,20 @@ def decimalToBinary(x):
 		
 def binaryToHex(binary):
         hex = ""
-        hexDict = {"0001":"1", "0010":"2", "0011":"3", "0100":"4", "0101":"5", "0110":"6", "0111":"7", "1000":"8",
+        binaryToHexDict = {"0000":"0", "0001":"1", "0010":"2", "0011":"3", "0100":"4", "0101":"5", "0110":"6", "0111":"7", "1000":"8",
                    "1001":"9", "1010":"A","1011":"B", "1100":"C", "1101":"D", "1110":"E", "1111":"F"}
         binary = (len(binary)%4) * "0" + binary #fix the padding so there are leading zeroes for even sets of four bits
         for i in range(len(binary)//4):
-                hex += hexDict[binary[4*i:4*i+4]]
-        return hex
+                hex += binaryToHexDict[binary[4*i:4*i+4]]
+        return 
+		
+def hexToBinary(hex):
+	binary = ""
+	hexToBinaryDict = {'0':'0000', '1': '0001', '2': '0010', '3': '0011', '4': '0100', '5': '0101', '6': '0110', '7': '0111',
+	'8': '1000', '9': '1001', 'A': '1010', 'B': '1011', 'C': '1100', 'D': '1101', 'E': '1110', 'F': '1111'}
+	for nibble in hex:
+		binary += hexToBinaryDict[nibble]
+	return binary
                         
 def test_bin2Dec_1():
         assert binaryToDecimal("1") == 1
@@ -39,6 +47,8 @@ def test_bin2Dec_5():
         assert binaryToDecimal("1000") == 8
 def test_bin2Dec_6():
         assert binaryToDecimal("1000110010101") == 4501
+		
+
 def test_dec2Bin_1():
         assert decimalToBinary(1) == "1"
 def test_dec2Bin_2():
