@@ -65,7 +65,7 @@ def test_dec2Bin_6():
     assert decimalToBinary(4501) == "1000110010101"
     
 def test_bin2Hex_1():
-    assert binaryToHex("0001") == '1'
+    assert binaryToHex("1") == '1'
 def test_bin2Hex_2():
     assert binaryToHex("10") == '2'
 def test_bin2Hex_3():
@@ -84,3 +84,38 @@ def test_bin2Hex_9():
     assert binaryToHex("1111") == 'F'
 def test_bin2Hex_10():
     assert binaryToHex("11011110101011011011111011101111") == 'DEADBEEF'
+
+def test_hex2bin_0():
+    assert hexToBinary("0") == '0000'
+def test_hex2bin_1():
+    assert hexToBinary("1") == '0001'
+def test_hex2bin_2():
+    assert hexToBinary("2") == '0010'
+def test_hex2bin_3():
+    assert hexToBinary("3") == '0011'
+def test_hex2bin_4():
+    assert hexToBinary("4") == '0100'
+def test_hex2bin_5():
+    assert hexToBinary("5") == '0101'
+def test_hex2bin_6():
+    assert hexToBinary("6") == '0110'
+def test_hex2bin_7():
+    assert hexToBinary("7") == '0111'
+def test_hex2bin_8():
+    assert hexToBinary("8") == '1000'
+def test_hex2bin_9():
+    assert hexToBinary("9") == '1001'
+def test_hex2bin_10():
+    assert hexToBinary("A") == '1010'
+def test_hex2bin_11():
+    assert hexToBinary("B") == '1011'
+def test_hex2bin_12():
+    assert hexToBinary("C") == '1100'
+def test_hex2bin_13():
+    assert hexToBinary("D") == "1101"
+def test_hex2bin_14():
+    assert hexToBinary("E") == '1110'
+def test_hex2bin_15():
+    assert hexToBinary("F") == '1111'
+def test_hex2bin_16():
+    assert hexToBinary("DEADBEEF") == '11011110101011011011111011101111'
