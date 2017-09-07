@@ -1,6 +1,8 @@
 #Kyle Stanfield
 #Converts ascii string into binary string
 
+from decimalToBinary import decimalToBinary
+
 def asciiToBinary(text):
     binary = ""
     for char in text:

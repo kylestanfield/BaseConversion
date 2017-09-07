@@ -1,6 +1,8 @@
 #Kyle Stanfield
 #Convert binary string into ascii string with tests
 
+from binaryToDecimal import binaryToDecimal
+
 def binaryToAscii(binary):
     text = ""
     for i in range(len(binary)//8):

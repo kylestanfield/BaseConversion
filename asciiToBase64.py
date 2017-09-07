@@ -1,10 +1,9 @@
 #Kyle Stanfield
 #Convert ascii into base64
 
-def asciiToBase64(text):
-    base64 = ""
-    binary = asciiToBinary(text)
-    base64Dict = {'000000':'A', '000001':'B', '000010':'C', '000011':'D', '000100':'E', '000101':'F', '000110':'G',
+from asciiToBinary import asciiToBinary
+
+base64Dict = {'000000':'A', '000001':'B', '000010':'C', '000011':'D', '000100':'E', '000101':'F', '000110':'G',
     
     '000111':'H', '001000':'I', '001001':'J', '001010':'K', '001011':'L', '001100':'M', '001101':'N', '001110':'O',
     
@@ -19,12 +18,16 @@ def asciiToBase64(text):
     '101111':'v', '110000':'w', '110001':'x', '110010':'y', '110011':'z', '110100':'0', '110101':'1', '110110':'2',
     
     '110111':'3', '111000':'4', '111001':'5', '111010':'6', '111011':'7', '111100':'8', '111101':'9', '111110':'+', '111111':'/'}
+
+def asciiToBase64(text):
+    base64 = ""
+    binary = asciiToBinary(text)
     padding = 0
     
     if len(binary) % 24 != 0: #establish how many equal signs of padding are needed
         padding = (24-(len(binary)%24))//8
-    #Make the binary string have even sets of six bits
-    if len(binary) % 6 != 0:
+    
+    if len(binary) % 6 != 0: #Make the binary string have even sets of six bits
         binary = binary + ((6-(len(binary)%6))*'0')
     
     for i in range(len(binary)//6):

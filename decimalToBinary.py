@@ -1,5 +1,6 @@
 #Kyle Stanfield
 #Convert decimal integer to binary string and tests
+
 def decimalToBinary(x):
     "Given an integer x, will return an equivalent binary string"
     binary = ""
